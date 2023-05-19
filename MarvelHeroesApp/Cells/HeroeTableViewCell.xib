@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="HeroeTableViewCell" customModule="MarvelHeroesApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="301" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="301" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-dq-U71">
+                        <rect key="frame" x="20" y="45" width="80" height="80"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="VNq-8U-ygG"/>
+                            <constraint firstAttribute="height" constant="80" id="bXf-RS-yr9"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nom del heroi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tt-ZQ-Hkm">
+                        <rect key="frame" x="110" y="45" width="171" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sV9-Sz-eOA">
+                        <rect key="frame" x="110" y="69" width="155" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="1nA-dq-U71" secondAttribute="bottom" constant="45" id="Fey-iR-ETg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sV9-Sz-eOA" secondAttribute="trailing" constant="20" id="Fn6-TO-wAf"/>
+                    <constraint firstItem="2tt-ZQ-Hkm" firstAttribute="leading" secondItem="1nA-dq-U71" secondAttribute="trailing" constant="10" id="GkY-xp-L87"/>
+                    <constraint firstItem="2tt-ZQ-Hkm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="I3r-Z5-MiY"/>
+                    <constraint firstItem="sV9-Sz-eOA" firstAttribute="leading" secondItem="1nA-dq-U71" secondAttribute="trailing" constant="10" id="IAm-kH-0Lo"/>
+                    <constraint firstItem="1nA-dq-U71" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cCW-uG-hah"/>
+                    <constraint firstItem="1nA-dq-U71" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ctB-CT-xmQ"/>
+                    <constraint firstAttribute="trailing" secondItem="2tt-ZQ-Hkm" secondAttribute="trailing" constant="20" id="psW-5h-MG5"/>
+                    <constraint firstItem="sV9-Sz-eOA" firstAttribute="top" secondItem="2tt-ZQ-Hkm" secondAttribute="bottom" id="qE6-Ug-i4h"/>
+                    <constraint firstItem="1nA-dq-U71" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="wpi-0a-dZt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="heroDescriptionLabel" destination="sV9-Sz-eOA" id="zEe-Tz-oQG"/>
+                <outlet property="heroImageView" destination="1nA-dq-U71" id="wOH-bv-7kP"/>
+                <outlet property="heroNameLabel" destination="2tt-ZQ-Hkm" id="uzk-WJ-sJ5"/>
+            </connections>
+            <point key="canvasLocation" x="-63.358778625954194" y="38.732394366197184"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,6 +13,8 @@
 		64FE4A812A1694C10099EA6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A7F2A1694C10099EA6A /* Main.storyboard */; };
 		64FE4A832A1694C10099EA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A822A1694C10099EA6A /* Assets.xcassets */; };
 		64FE4A862A1694C10099EA6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A842A1694C10099EA6A /* LaunchScreen.storyboard */; };
+		64FE4A902A1788BA0099EA6A /* HeroeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE4A8E2A1788BA0099EA6A /* HeroeTableViewCell.swift */; };
+		64FE4A912A1788BA0099EA6A /* HeroeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		64FE4A822A1694C10099EA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64FE4A852A1694C10099EA6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FE4A872A1694C10099EA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FE4A8E2A1788BA0099EA6A /* HeroeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeTableViewCell.swift; sourceTree = "<group>"; };
+		64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		64FE4A782A1694C10099EA6A /* MarvelHeroesApp */ = {
 			isa = PBXGroup;
 			children = (
+				64FE4A8D2A17887B0099EA6A /* Cells */,
 				64FE4A792A1694C10099EA6A /* AppDelegate.swift */,
 				64FE4A7B2A1694C10099EA6A /* SceneDelegate.swift */,
 				64FE4A7D2A1694C10099EA6A /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				64FE4A872A1694C10099EA6A /* Info.plist */,
 			);
 			path = MarvelHeroesApp;
+			sourceTree = "<group>";
+		};
+		64FE4A8D2A17887B0099EA6A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				64FE4A8E2A1788BA0099EA6A /* HeroeTableViewCell.swift */,
+				64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FE4A862A1694C10099EA6A /* LaunchScreen.storyboard in Resources */,
+				64FE4A912A1788BA0099EA6A /* HeroeTableViewCell.xib in Resources */,
 				64FE4A832A1694C10099EA6A /* Assets.xcassets in Resources */,
 				64FE4A812A1694C10099EA6A /* Main.storyboard in Resources */,
 			);
@@ -139,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FE4A7E2A1694C10099EA6A /* ViewController.swift in Sources */,
+				64FE4A902A1788BA0099EA6A /* HeroeTableViewCell.swift in Sources */,
 				64FE4A7A2A1694C10099EA6A /* AppDelegate.swift in Sources */,
 				64FE4A7C2A1694C10099EA6A /* SceneDelegate.swift in Sources */,
 			);

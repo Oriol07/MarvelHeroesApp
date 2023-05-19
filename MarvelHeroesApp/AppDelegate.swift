@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MarvelHeroesApp
 //
-//  Created by Carme Lluria on 18/5/23.
+//  Created by Oriol Comas Lluria on 18/5/23.
 //
 
 import UIKit
