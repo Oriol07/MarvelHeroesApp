@@ -15,6 +15,8 @@
 		64FE4A862A1694C10099EA6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A842A1694C10099EA6A /* LaunchScreen.storyboard */; };
 		64FE4A902A1788BA0099EA6A /* HeroeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE4A8E2A1788BA0099EA6A /* HeroeTableViewCell.swift */; };
 		64FE4A912A1788BA0099EA6A /* HeroeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */; };
+		64FE4A942A17D7300099EA6A /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE4A932A17D7300099EA6A /* MarvelAPI.swift */; };
+		64FE4A962A17DF3F0099EA6A /* MarvelAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE4A952A17DF3F0099EA6A /* MarvelAPIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		64FE4A872A1694C10099EA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FE4A8E2A1788BA0099EA6A /* HeroeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeTableViewCell.swift; sourceTree = "<group>"; };
 		64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeTableViewCell.xib; sourceTree = "<group>"; };
+		64FE4A932A17D7300099EA6A /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
+		64FE4A952A17DF3F0099EA6A /* MarvelAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		64FE4A782A1694C10099EA6A /* MarvelHeroesApp */ = {
 			isa = PBXGroup;
 			children = (
+				64FE4A922A17D6EF0099EA6A /* API */,
 				64FE4A8D2A17887B0099EA6A /* Cells */,
 				64FE4A792A1694C10099EA6A /* AppDelegate.swift */,
 				64FE4A7B2A1694C10099EA6A /* SceneDelegate.swift */,
@@ -79,6 +84,15 @@
 				64FE4A8F2A1788BA0099EA6A /* HeroeTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		64FE4A922A17D6EF0099EA6A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				64FE4A932A17D7300099EA6A /* MarvelAPI.swift */,
+				64FE4A952A17DF3F0099EA6A /* MarvelAPIResponse.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FE4A962A17DF3F0099EA6A /* MarvelAPIResponse.swift in Sources */,
+				64FE4A942A17D7300099EA6A /* MarvelAPI.swift in Sources */,
 				64FE4A7E2A1694C10099EA6A /* ViewController.swift in Sources */,
 				64FE4A902A1788BA0099EA6A /* HeroeTableViewCell.swift in Sources */,
 				64FE4A7A2A1694C10099EA6A /* AppDelegate.swift in Sources */,
