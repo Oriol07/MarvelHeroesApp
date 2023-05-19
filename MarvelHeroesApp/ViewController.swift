@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var heroListTableView: UITableView!
     
+    @IBOutlet weak var heroSearchBar: UISearchBar!
+    
+    
+    
     private var heroesNames = ["Spiderman", "Hulk", "Antman", "Ironman", "Black Widow", "Captain Gringo"]
     
     //Functions
@@ -52,9 +56,8 @@ extension ViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeroeTableViewCell", for: indexPath)
         
         if let newCell = cell as? HeroeTableViewCell {
-            newCell.setupCell(name: heroesNames[indexPath.row], description: "I am the heroe #\(indexPath.row) expert in kung fu and spiders")
+            newCell.setupCell(name: heroesNames[indexPath.row], description: "I am the heroe #\(indexPath.row) expert in kung fu and spiders, lorem ipsum vem vet inte du, vem vet inte jag, vi vet ingenting nu, vi vet inget idag, du är en saga för god för at vara san! det e en saga i sig att vi funnits varann. vi kunde liga gärna aldrig nagonsin möts eller var vört mötte reden bestämt innan vi föts")
         }
-        
         
         return cell
     }

@@ -12,7 +12,7 @@ class HeroeTableViewCell: UITableViewCell {
     
     //referencces
     
-    @IBOutlet weak var heroImageView: UIView!
+    @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var heroDescriptionLabel: UILabel!
     
@@ -22,9 +22,14 @@ class HeroeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        heroImageView.clipsToBounds = true
-        heroImageView.layer.cornerRadius = heroImageView.frame.width/2
         
+        heroImageView.clipsToBounds = true
+        
+        //circular image
+        heroImageView.layer.cornerRadius = heroImageView.frame.width/2
+        if let image = UIImage(named: "spiderman"){
+            heroImageView.image = image
+        }
         
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,30 +13,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarvelHeroesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g49-7h-hSk">
+                                <rect key="frame" x="0.0" y="64" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="exR-ej-DL4"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y3O-iG-gLP">
-                                <rect key="frame" x="10" y="57" width="408" height="835"/>
+                                <rect key="frame" x="15" y="130" width="363" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="y3O-iG-gLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0CQ-eO-UyX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y3O-iG-gLP" secondAttribute="trailing" constant="10" id="TMF-VJ-djd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y3O-iG-gLP" secondAttribute="bottom" id="UfV-PI-Iv4"/>
-                            <constraint firstItem="y3O-iG-gLP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="iN2-CI-PrR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y3O-iG-gLP" secondAttribute="trailing" constant="15" id="H7l-cT-37M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y3O-iG-gLP" secondAttribute="bottom" constant="5" id="Kui-gj-YH0"/>
+                            <constraint firstItem="y3O-iG-gLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="MIS-Be-DdZ"/>
+                            <constraint firstItem="y3O-iG-gLP" firstAttribute="top" secondItem="g49-7h-hSk" secondAttribute="bottom" constant="10" id="Us3-W1-lbg"/>
+                            <constraint firstItem="g49-7h-hSk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="XrO-e8-wvp"/>
+                            <constraint firstItem="g49-7h-hSk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pcZ-P7-BOt"/>
+                            <constraint firstItem="g49-7h-hSk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sxx-Uo-NZt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="heroListTableView" destination="y3O-iG-gLP" id="PoA-fd-eT2"/>
+                        <outlet property="heroSearchBar" destination="g49-7h-hSk" id="dkN-8v-89h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.946564885496173" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="95.419847328244273" y="2.8169014084507045"/>
         </scene>
     </scenes>
     <resources>
