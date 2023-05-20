@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     
     
     
-    private var heroesNames = [String]()
-    private var filteredHeroes = [String]()
+    private var heroes = [MarvelHero]()
+    private var filteredHeroes = [MarvelHero]()
     private var isSearching = false
     
     
@@ -43,8 +43,8 @@ class ViewController: UIViewController {
     {
         MarvelAPI.fetchHeroes{[weak self] result in
             switch result {
-            case .success(let names):
-                self?.heroesNames = names
+            case .success(let fetchedHeroes):
+                self?.heroes = fetchedHeroes
                 DispatchQueue.main.async {
                     self?.heroListTableView.reloadData()
                 }
@@ -75,7 +75,7 @@ extension ViewController: UITableViewDataSource{
         }
         else
         {
-            return heroesNames.count
+            return heroes.count
         }
     }
     
@@ -83,17 +83,17 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeroeTableViewCell", for: indexPath)
         
-        let heroName: String
+        let hero: MarvelHero
         if isSearching {
-            heroName = filteredHeroes[indexPath.row]
+            hero = filteredHeroes[indexPath.row]
         }
         else
         {
-            heroName = heroesNames[indexPath.row]
+            hero = heroes[indexPath.row]
         }
         
         if let newCell = cell as? HeroeTableViewCell {
-            newCell.setupCell(name: heroName, description: "I am the heroe #\(indexPath.row) expert in kung fu and spiders, lorem ipsum vem vet inte du, vem vet inte jag, vi vet ingenting nu, vi vet inget idag, du är en saga för god för at vara san! det e en saga i sig att vi funnits varann. vi kunde liga gärna aldrig nagonsin möts eller var vört mötte reden bestämt innan vi föts")
+            newCell.setupCell(name: hero.name, description: hero.description)
         }
         
         return cell
@@ -103,7 +103,7 @@ extension ViewController: UITableViewDataSource{
 //2.Search
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredHeroes = heroesNames.filter {$0.lowercased().contains(searchText.lowercased())}
+        filteredHeroes = heroes.filter {$0.name.lowercased().contains(searchText.lowercased())}
         isSearching = !searchText.isEmpty
         heroListTableView.reloadData()
     }

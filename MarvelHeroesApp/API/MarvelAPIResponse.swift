@@ -17,5 +17,5 @@ struct MarvelAPIData: Decodable {
 }
 struct MarvelHero: Decodable {
     let name: String
-   // let description: String
+    let description: String
 }
