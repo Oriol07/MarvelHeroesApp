@@ -27,9 +27,9 @@ class HeroeTableViewCell: UITableViewCell {
         
         //circular image
         heroImageView.layer.cornerRadius = heroImageView.frame.width/2
-        if let image = UIImage(named: "spiderman"){
+       /* if let image = UIImage(named: "spiderman"){
             heroImageView.image = image
-        }
+        }*/
         
     }
 
@@ -39,5 +39,24 @@ class HeroeTableViewCell: UITableViewCell {
         heroDescriptionLabel.text = description
         
     }
+    
+   func loadImage(withURL url: String, ext: String)
+    {
+        let secUrl = url.replacingOccurrences(of: "http://", with: "https://")
+        
+        guard let imageURL = URL(string: secUrl + "/standard_large." + ext) else {
+            return
+        }
+        URLSession.shared.dataTask(with: imageURL){
+            data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            DispatchQueue.main.async {
+                let image = UIImage(data:data)
+                self.heroImageView.image = image
+            }
+        }.resume()
+    } 
     
 }

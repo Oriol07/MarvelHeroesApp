@@ -16,6 +16,21 @@ struct MarvelAPIData: Decodable {
     
 }
 struct MarvelHero: Decodable {
+    let id: Int
     let name: String
     let description: String
+    let thumbnail: MarvelImage
 }
+
+struct MarvelImage: Decodable
+{
+    let path: String
+    let fileExtension: String //
+    
+    private enum CodingKeys: String, CodingKey {
+        case path
+        case fileExtension = "extension"
+    }
+}
+
+

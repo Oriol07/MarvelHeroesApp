@@ -94,6 +94,10 @@ extension ViewController: UITableViewDataSource{
         
         if let newCell = cell as? HeroeTableViewCell {
             newCell.setupCell(name: hero.name, description: hero.description)
+            
+            newCell.loadImage(withURL: hero.thumbnail.path, ext: hero.thumbnail.fileExtension)
+            print ("URL: ", hero.thumbnail.path, hero.thumbnail.fileExtension )
+            
         }
         
         return cell
