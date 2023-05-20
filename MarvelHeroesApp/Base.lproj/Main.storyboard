@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D3K-DH-ov2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,23 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Heroes list-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarvelHeroesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Heroes list" id="BYZ-38-t0r" customClass="ViewController" customModule="MarvelHeroesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g49-7h-hSk">
-                                <rect key="frame" x="0.0" y="64" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="108" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="exR-ej-DL4"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y3O-iG-gLP">
-                                <rect key="frame" x="15" y="130" width="363" height="683"/>
+                                <rect key="frame" x="15" y="174" width="363" height="639"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -40,17 +40,91 @@
                             <constraint firstItem="g49-7h-hSk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sxx-Uo-NZt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VvG-u8-m5f"/>
                     <connections>
                         <outlet property="heroListTableView" destination="y3O-iG-gLP" id="PoA-fd-eT2"/>
                         <outlet property="heroSearchBar" destination="g49-7h-hSk" id="dkN-8v-89h"/>
+                        <segue destination="dlB-E2-D7u" kind="show" identifier="heroe_detailed_segue" id="2oe-ha-WOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95.419847328244273" y="2.8169014084507045"/>
+            <point key="canvasLocation" x="995.32710280373828" y="2.5917926565874732"/>
+        </scene>
+        <!--HeroeDetail-->
+        <scene sceneID="yOr-su-0wX">
+            <objects>
+                <viewController title="HeroeDetail" id="dlB-E2-D7u" customClass="ViewController" customModule="MarvelHeroesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ST9-Lx-dyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-h2-rsb">
+                                <rect key="frame" x="15" y="103" width="363" height="260"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIr-pe-nuu">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nom del heroi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-pD-OcZ">
+                                        <rect key="frame" x="0.0" y="128" width="363" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VHi-GA-yLp">
+                                        <rect key="frame" x="0.0" y="152" width="363" height="108"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fqL-ZO-P70"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TBH-h2-rsb" firstAttribute="centerX" secondItem="ST9-Lx-dyQ" secondAttribute="centerX" id="a1a-HS-ufH"/>
+                            <constraint firstItem="TBH-h2-rsb" firstAttribute="top" secondItem="ST9-Lx-dyQ" secondAttribute="topMargin" id="b7P-dK-h4c"/>
+                            <constraint firstItem="fqL-ZO-P70" firstAttribute="trailing" secondItem="TBH-h2-rsb" secondAttribute="trailing" constant="15" id="haP-qv-opo"/>
+                            <constraint firstItem="TBH-h2-rsb" firstAttribute="leading" secondItem="fqL-ZO-P70" secondAttribute="leading" constant="15" id="mAj-zF-Dna"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tb6-zC-bMZ"/>
+                    <connections>
+                        <outlet property="heroDetailDescriptionText" destination="VHi-GA-yLp" id="9d4-SP-P98"/>
+                        <outlet property="heroDetailImageView" destination="UIr-pe-nuu" id="lHK-ZU-fgh"/>
+                        <outlet property="heroDetailName" destination="ARo-pD-OcZ" id="j51-Jh-Hil"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KnY-Pw-8Pn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2203.7383177570091" y="2.5917926565874732"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eei-VV-zKi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D3K-DH-ov2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oj9-Y4-KhX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kMH-E7-AcP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ke-br-SwR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.327102803738313" y="2.5917926565874732"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

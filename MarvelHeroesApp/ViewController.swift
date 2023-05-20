@@ -16,11 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var heroSearchBar: UISearchBar!
     
     
-    
     private var heroes = [MarvelHero]()
     private var filteredHeroes = [MarvelHero]()
     private var isSearching = false
     
+    //PAGE 2
+    @IBOutlet weak var heroDetailImageView: UIImageView!
+    
+    @IBOutlet weak var heroDetailName: UILabel!
+    
+    @IBOutlet weak var heroDetailDescriptionText: UITextView!
     
     //Functions
     override func viewDidLoad() {
@@ -63,6 +68,8 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Hero selected")
+        performSegue(withIdentifier: "heroe_detailed_segue", sender: nil)
+            
     }
 }
 //Data
