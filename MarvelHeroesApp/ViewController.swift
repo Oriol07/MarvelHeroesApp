@@ -21,25 +21,36 @@ class ViewController: UIViewController {
     private var isSearching = false
     
     //PAGE 2
-    @IBOutlet weak var heroDetailImageView: UIImageView!
+    /*@IBOutlet weak var heroDetailImageView: UIImageView!
     
     @IBOutlet weak var heroDetailName: UILabel!
     
-    @IBOutlet weak var heroDetailDescriptionText: UITextView!
+    @IBOutlet weak var heroDetailDescriptionText: UITextView!*/
+    
+    //Shared vars
+    
+    private var heroSelected = MarvelHero(id: 0,name: "a", description: "b", thumbnail: MarvelImage(path: "c", fileExtension: "d"))
     
     //Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        heroListTableView.dataSource = self
-        heroListTableView.register(UINib(nibName: "HeroeTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroeTableViewCell")
-        heroListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "my-cell")
-        
-        //For interaction
-        heroListTableView.delegate = self
-        
-        fetchHeroes()
+        if(heroListTableView != nil)
+        {
+            heroListTableView.dataSource = self
+            heroListTableView.register(UINib(nibName: "HeroeTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroeTableViewCell")
+            heroListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "my-cell")
+            
+            //For interaction
+            heroListTableView.delegate = self
+            
+            fetchHeroes()
+        }
+       /* if (heroDetailName != nil)
+        {
+            print("Hero selected2", heroSelected.name)
+            heroDetailName.text = heroSelected.name
+        } */
         
         
     }
@@ -63,15 +74,33 @@ class ViewController: UIViewController {
 
 }
 
+
 //1. Table view
 //Cell selected
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Hero selected")
-        performSegue(withIdentifier: "heroe_detailed_segue", sender: nil)
-            
+        
+        heroSelected = heroes[indexPath.row]
+        print("Hero selected ", heroSelected.name)
+        
+        performSegue(withIdentifier: "heroe_detailed_segue", sender: heroSelected)
+  
+        
     }
 }
+
+extension ViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Hero selected2", heroSelected.name)
+        if segue.identifier == "hero_detailed_segue",
+           let destinationVC = segue.destination as? HeroDetailViewController,
+                   let selectedHero = sender as? MarvelHero {
+            destinationVC.heroSelected = selectedHero
+            
+        }
+    }
+}
+
 //Data
 extension ViewController: UITableViewDataSource{
     
