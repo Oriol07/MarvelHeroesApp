@@ -79,9 +79,14 @@ class ViewController: UIViewController {
 //Cell selected
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        heroSelected = heroes[indexPath.row]
-        print("Hero selected ", heroSelected.name)
+        if isSearching
+        {
+            heroSelected = filteredHeroes[indexPath.row]
+        }
+        else
+        {
+            heroSelected = heroes[indexPath.row]
+        }
         
         performSegue(withIdentifier: "heroe_detailed_segue", sender: heroSelected)
   
