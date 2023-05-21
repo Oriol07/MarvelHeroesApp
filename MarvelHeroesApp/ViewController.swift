@@ -129,7 +129,7 @@ extension ViewController: UITableViewDataSource{
         }
         
         if let newCell = cell as? HeroeTableViewCell {
-            newCell.setupCell(name: hero.name, description: hero.description)
+            newCell.setupCell(name: hero.name!, description: hero.description!)
             
             newCell.loadImage(withURL: hero.thumbnail.path, ext: hero.thumbnail.fileExtension)
             print ("URL: ", hero.thumbnail.path, hero.thumbnail.fileExtension )
@@ -143,7 +143,7 @@ extension ViewController: UITableViewDataSource{
 //2.Search
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredHeroes = heroes.filter {$0.name.lowercased().contains(searchText.lowercased())}
+        filteredHeroes = heroes.filter {$0.name!.lowercased().contains(searchText.lowercased())}
         isSearching = !searchText.isEmpty
         heroListTableView.reloadData()
         

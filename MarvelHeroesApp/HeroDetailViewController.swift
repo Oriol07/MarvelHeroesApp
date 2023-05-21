@@ -9,24 +9,33 @@ import UIKit
 
 class HeroDetailViewController: UIViewController
 {
+    //Hero info
     @IBOutlet weak var heroDetailImageView: UIImageView!
     
     @IBOutlet weak var heroDetailName: UILabel!
     
     @IBOutlet weak var heroDetailDescriptionText: UITextView!
     
+    //Controlpage
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     public var heroName: String?;
     
-    public var heroSelected = MarvelHero(id: 0,name: "a", description: "b", thumbnail: MarvelImage(path: "c", fileExtension: "d"))
+    public var heroSelected:  MarvelHero?
+    //MarvelHero(id: 0,name: "a", description: "b", thumbnail: MarvelImage(path: "c", fileExtension: "d"))
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        heroDetailName.text = heroSelected.name
-        heroDetailDescriptionText.text = heroSelected.description
-        print(heroSelected.description)
-        loadImage(withURL: heroSelected.thumbnail.path, ext: heroSelected.thumbnail.fileExtension)
-      
+ 
+            heroDetailName.text = heroSelected?.name
+            heroDetailDescriptionText.text = heroSelected?.description
+            loadImage(withURL: (heroSelected?.thumbnail.path)!, ext: (heroSelected?.thumbnail.fileExtension)!)
+        
         
         
     }
@@ -48,4 +57,21 @@ class HeroDetailViewController: UIViewController
             }
         }.resume()
     }
+    
+    
+    
+    //Buttons actions
+    
+    @IBAction func ComicsButtonAction(_ sender: Any) {
+        pageControl.currentPage = 0
+    }
+    
+    @IBAction func SeriesButtonAction(_ sender: Any) {
+        pageControl.currentPage = 1
+    }
+    
+    @IBAction func LoreButtonAction(_ sender: Any) {
+        pageControl.currentPage = 2
+    }
+    
 }

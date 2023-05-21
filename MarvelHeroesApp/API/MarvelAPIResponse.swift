@@ -15,11 +15,13 @@ struct MarvelAPIData: Decodable {
     let results: [MarvelHero]
     
 }
+
 struct MarvelHero: Decodable {
-    let id: Int
-    let name: String
-    let description: String
+    let id: Int?
+    let name: String?
+    let description: String?
     let thumbnail: MarvelImage
+   
     
 }
 
@@ -33,5 +35,17 @@ struct MarvelImage: Decodable
         case fileExtension = "extension"
     }
 }
+
+struct MarvelList {
+    let available: Int?
+    let returned: Int?
+    let items: [MarvelSummary]
+}
+
+struct MarvelSummary
+{
+    let name: String?
+}
+
 
 

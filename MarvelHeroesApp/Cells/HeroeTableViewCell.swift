@@ -27,9 +27,7 @@ class HeroeTableViewCell: UITableViewCell {
         
         //circular image
         heroImageView.layer.cornerRadius = heroImageView.frame.width/2
-       /* if let image = UIImage(named: "spiderman"){
-            heroImageView.image = image
-        }*/
+  
         
     }
 
