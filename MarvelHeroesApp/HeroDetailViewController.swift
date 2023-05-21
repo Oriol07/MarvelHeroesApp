@@ -26,8 +26,16 @@ class HeroDetailViewController: UIViewController
     public var heroSelected:  MarvelHero?
     //MarvelHero(id: 0,name: "a", description: "b", thumbnail: MarvelImage(path: "c", fileExtension: "d"))
     
+    //buttons
+    
+    @IBOutlet weak var comicsButton: UIButton!
+    
+    @IBOutlet weak var SeriesButton: UIButton!
+    
+    @IBOutlet weak var LoreButton: UIButton!
     
     
+    //func
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +72,23 @@ class HeroDetailViewController: UIViewController
     
     @IBAction func ComicsButtonAction(_ sender: Any) {
         pageControl.currentPage = 0
+        comicsButton.backgroundColor = UIColor.systemRed
+        SeriesButton.backgroundColor = UIColor.systemGray
+        LoreButton.backgroundColor = UIColor.systemGray
     }
     
     @IBAction func SeriesButtonAction(_ sender: Any) {
         pageControl.currentPage = 1
+        SeriesButton.backgroundColor = UIColor.systemRed
+        LoreButton.backgroundColor = UIColor.systemGray
+        comicsButton.backgroundColor = UIColor.systemGray
     }
     
     @IBAction func LoreButtonAction(_ sender: Any) {
         pageControl.currentPage = 2
+        LoreButton.backgroundColor = UIColor.systemRed
+        SeriesButton.backgroundColor = UIColor.systemGray
+        comicsButton.backgroundColor = UIColor.systemGray
     }
     
 }
