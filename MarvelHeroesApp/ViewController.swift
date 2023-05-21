@@ -91,11 +91,12 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Hero selected2", heroSelected.name)
-        if segue.identifier == "hero_detailed_segue",
+        
+        if segue.identifier == "heroe_detailed_segue",
            let destinationVC = segue.destination as? HeroDetailViewController,
                    let selectedHero = sender as? MarvelHero {
             destinationVC.heroSelected = selectedHero
+            //print("Hero selected2", heroSelected.name)
             
         }
     }

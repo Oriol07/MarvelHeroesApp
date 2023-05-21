@@ -20,6 +20,7 @@ struct MarvelHero: Decodable {
     let name: String
     let description: String
     let thumbnail: MarvelImage
+    
 }
 
 struct MarvelImage: Decodable

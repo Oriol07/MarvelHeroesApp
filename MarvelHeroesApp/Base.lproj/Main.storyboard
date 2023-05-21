@@ -59,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-h2-rsb">
-                                <rect key="frame" x="15" y="103" width="363" height="260"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-h2-rsb">
+                                <rect key="frame" x="15" y="103" width="363" height="665"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIr-pe-nuu">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="128"/>
@@ -71,12 +71,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VHi-GA-yLp">
-                                        <rect key="frame" x="0.0" y="152" width="363" height="108"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dol " adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia2-UH-NzV">
+                                        <rect key="frame" x="0.0" y="152" width="363" height="513"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -85,6 +84,7 @@
                         <viewLayoutGuide key="safeArea" id="fqL-ZO-P70"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fqL-ZO-P70" firstAttribute="bottom" secondItem="TBH-h2-rsb" secondAttribute="bottom" constant="50" id="6G5-GE-z7Z"/>
                             <constraint firstItem="TBH-h2-rsb" firstAttribute="centerX" secondItem="ST9-Lx-dyQ" secondAttribute="centerX" id="a1a-HS-ufH"/>
                             <constraint firstItem="TBH-h2-rsb" firstAttribute="top" secondItem="ST9-Lx-dyQ" secondAttribute="topMargin" id="b7P-dK-h4c"/>
                             <constraint firstItem="fqL-ZO-P70" firstAttribute="trailing" secondItem="TBH-h2-rsb" secondAttribute="trailing" constant="15" id="haP-qv-opo"/>
@@ -93,9 +93,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tb6-zC-bMZ"/>
                     <connections>
-                        <outlet property="heroDetailDescriptionText" destination="VHi-GA-yLp" id="9d4-SP-P98"/>
-                        <outlet property="heroDetailImageView" destination="UIr-pe-nuu" id="lHK-ZU-fgh"/>
-                        <outlet property="heroDetailName" destination="ARo-pD-OcZ" id="j51-Jh-Hil"/>
+                        <outlet property="heroDetailDescriptionText" destination="ia2-UH-NzV" id="DUe-g3-3Ue"/>
+                        <outlet property="heroDetailImageView" destination="UIr-pe-nuu" id="4Ep-0u-9GP"/>
+                        <outlet property="heroDetailName" destination="ARo-pD-OcZ" id="3c8-1k-186"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnY-Pw-8Pn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
