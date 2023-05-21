@@ -19,14 +19,10 @@ class ViewController: UIViewController {
     private var heroes = [MarvelHero]()
     private var filteredHeroes = [MarvelHero]()
     private var isSearching = false
-    
-    //PAGE 2
-    /*@IBOutlet weak var heroDetailImageView: UIImageView!
-    
-    @IBOutlet weak var heroDetailName: UILabel!
-    
-    @IBOutlet weak var heroDetailDescriptionText: UITextView!*/
-    
+    private var isPolling = false
+
+    let limit = 20
+    var lettersSearched = ""
     //Shared vars
     
     private var heroSelected = MarvelHero(id: 0,name: "a", description: "b", thumbnail: MarvelImage(path: "c", fileExtension: "d"))
@@ -57,18 +53,22 @@ class ViewController: UIViewController {
     
     private func fetchHeroes()
     {
-        MarvelAPI.fetchHeroes{[weak self] result in
-            switch result {
-            case .success(let fetchedHeroes):
-                self?.heroes = fetchedHeroes
-                DispatchQueue.main.async {
-                    self?.heroListTableView.reloadData()
+        
+        MarvelAPI.fetchHeroes(startingWith: lettersSearched){[weak self] result in
+                    switch result {
+                    case .success(let fetchedHeroes):
+                        self?.heroes = fetchedHeroes
+                        DispatchQueue.main.async {
+                            self?.heroListTableView.reloadData()
+                        }
+                    case.failure(let error):
+                        print("Error fetching hero: \(error.localizedDescription)")
+                    }
+                    
                 }
-            case.failure(let error):
-                print("Error fetching hero: \(error.localizedDescription)")
-            }
             
-        }
+    
+        
     }
 
 
@@ -96,7 +96,6 @@ extension ViewController {
            let destinationVC = segue.destination as? HeroDetailViewController,
                    let selectedHero = sender as? MarvelHero {
             destinationVC.heroSelected = selectedHero
-            //print("Hero selected2", heroSelected.name)
             
         }
     }
@@ -147,6 +146,17 @@ extension ViewController: UISearchBarDelegate {
         filteredHeroes = heroes.filter {$0.name.lowercased().contains(searchText.lowercased())}
         isSearching = !searchText.isEmpty
         heroListTableView.reloadData()
+        
+        if filteredHeroes.isEmpty {
+            isPolling = true
+            lettersSearched = searchText.lowercased()
+            fetchHeroes()
+            
+        }
+        else{
+            isPolling = false
+        }
+        
     }
     
 }

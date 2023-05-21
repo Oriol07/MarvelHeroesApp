@@ -14,12 +14,28 @@ struct MarvelAPI
     private static let publicKey = "3465f4b3208c876173af93cfd0d6e598"
     private static let privateKey = "5e5a87be38e51eaeb9a32bcfa737faa31aa986d1"
     
-    static func fetchHeroes(completion: @escaping (Result<[MarvelHero], Error>) -> Void) {
+    private static var timer: Timer?
+    
+
+
+    
+    
+    static func fetchHeroes(startingWith letter: String, completion: @escaping (Result<[MarvelHero], Error>) -> Void) {
         let endpoint = "characters"
+        
+        
         let timestamp = String(Date().timeIntervalSince1970)
         let hash = "\(timestamp)\(privateKey)\(publicKey)".md5
-        
-        let urlString = "\(baseURL)\(endpoint)?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
+    
+        var urlString: String
+        if (letter == "")
+        {
+            urlString = "\(baseURL)\(endpoint)?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
+        }
+        else
+        {
+            urlString = "\(baseURL)\(endpoint)?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)&nameStartsWith=\(letter)"
+        }
         
         guard let url = URL(string: urlString) else
         {
